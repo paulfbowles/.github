@@ -32,7 +32,7 @@ jobs:
       - name: Pegelstaende abrufen
         run: python fetch_pegel.py
         env:
-          DW_API_KEY:  ${{ secrets.DW_API_KEY }}
+          DW_API_KEY:  ${{ secrets.DATAWRAPPERPEGELKARTE }}
           DW_CHART_ID: ${{ secrets.DW_CHART_ID }}
 
       # 5. CSV ins Repository committen und pushen
