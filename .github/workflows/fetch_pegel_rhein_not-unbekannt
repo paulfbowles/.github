@@ -1,4 +1,4 @@
-name: Pegelstaende abrufen
+name: Pegelstaende Rhein abrufen
 
 on:
   schedule:
