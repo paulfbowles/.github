@@ -29,8 +29,8 @@ jobs:
         run: pip install requests pandas
 
       # 4. Daten abrufen & CSV schreiben
-      - name: Pegelstaende abrufen
-        run: python fetch_pegel.py
+      - name: Pegelstaende Rhein abrufen
+        run: python fetch_pegel_rhein_not-unbekannt.py
         env:
           DW_API_KEY:  ${{ secrets.DATAWRAPPERPEGELKARTE }}
           DW_CHART_ID: ${{ secrets.DW_CHART_ID_RHEIN }}
@@ -41,7 +41,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/pegel.csv
+          git add data/pegel_rhein.csv
           git diff --cached --quiet \
             && echo "Keine Änderungen – kein Commit nötig." \
             || git commit -m "chore: Pegelstaende aktualisiert $(date -u '+%Y-%m-%d %H:%M UTC')"
